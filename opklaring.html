@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <title>Opklaring</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      color: #222;
+      font-family: 'Arial', sans-serif;
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      background: white;
+    }
+
+    h1 {
+      color: #cc0000;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    #counter-info {
+      margin-top: 30px;
+      padding: 15px;
+      font-size: 20px;
+      background-color: #ffeeee;
+      border: 1px solid #cc0000;
+      border-radius: 8px;
+      color: #cc0000;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Du er blevet snydt – og det var meningen!</h1>
+  <p>
+    Denne side var en pædagogisk øvelse i social engineering og cybersikkerhed. 
+    Mange mennesker falder dagligt for links, der ser troværdige ud – og klikker uden at tænke nærmere over det.
+  </p>
+  <p>
+    Du gjorde det samme – og det er helt ok. Det vigtigste er, at du lærer at spotte faresignaler:
+    mærkelige links, forkortede URL’er, falske billeder og sider der ligner noget officielt.
+  </p>
+  <div id="counter-info">Indlæser antal...</div>
+
+  <script>
+    fetch('https://api.countapi.xyz/hit/lektio-hack-demo/oplysning')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("counter-info").textContent =
+          "Du er person nr. " + data.value + ", der er faldet i fælden!";
+      });
+  </script>
+</body>
+</html>
