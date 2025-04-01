@@ -2,12 +2,55 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8">
-  <title>Lectio – Afleveringsoversigt</title>
+  <title>Sikkerhedsbrud</title>
+  <style>
+    body {
+      background-color: black;
+      color: red;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      font-size: 48px;
+      animation: blink 1s infinite;
+    }
+
+    p {
+      font-size: 20px;
+      margin-top: 30px;
+    }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .warning-box {
+      border: 3px solid red;
+      padding: 30px;
+      background-color: #220000;
+      box-shadow: 0 0 20px red;
+      margin: 50px auto;
+      max-width: 600px;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      setTimeout(function() {
+        alert("⚠️ SYSTEMFEJL: Du er blevet hacket!");
+      }, 1000);
+    };
+  </script>
 </head>
 <body>
-  <script>
-  window.location.href = "https://www.youtube.com/";
-</script>
-
+  <div class="warning-box">
+    <h1>⚠️ ADVARSEL ⚠️</h1>
+    <p>Du har netop åbnet et link fra en usikker kilde.</p>
+    <p>Systemet er kompromitteret...</p>
+    <p><strong>Du er blevet hacket!</strong></p>
+  </div>
 </body>
 </html>
