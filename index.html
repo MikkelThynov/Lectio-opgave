@@ -65,10 +65,12 @@
   </script>
 
   <script>
-  function trackAndGo() {
-    fetch('https://api.countapi.xyz/hit/lektio-hack-demo/oplysning')
-      .then(() => {
-        window.location.href = 'opklaring.html';
+    function trackAndGo() {
+    fetch("https://apicount.vercel.app/api/increment?name=lektio-demo")
+      .then(res => res.json())
+      .then(data => {
+        console.log("Klik nr:", data.value); // fx vis i konsol eller DOM
+        window.location.href = "opklaring.html";
       });
   }
 </script>
