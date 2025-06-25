@@ -42,9 +42,23 @@
   <p>
     Du gjorde det samme – og det er helt ok. Det vigtigste er, at du lærer at spotte faresignaler:
     mærkelige links, forkortede URL’er, falske billeder og sider der ligner noget officielt.
-  </p>
-  <div id="counter-info">Indlæser antal...</div>
 
+    Du tilmeldes nu automatisk et IT-sikkerhedskursus.
+  </p>
+  <div id="counter-info"><a id="kursuslink" href="#" target="_blank">Deltag i kursus</a></div>
+
+  <script>
+  fetch("kursuslink.txt")
+    .then(response => response.text())
+    .then(url => {
+      const linkEl = document.getElementById("kursuslink");
+      linkEl.href = url.trim(); // trim fjerner whitespaces
+    })
+    .catch(err => {
+      document.getElementById("kursuslink").textContent = "Link kunne ikke indlæses.";
+    });
+</script>
+  
   <script>
     /*fetch('https://api.countapi.xyz/hit/lektio-hack-demo/oplysning')
       .then(res => res.json())
