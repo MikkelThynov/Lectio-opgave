@@ -37,6 +37,24 @@
       margin: 50px auto;
       max-width: 600px;
     }
+
+    .next-button {
+  background-color: red;
+  color: black;
+  font-size: 18px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
+  font-family: 'Courier New', monospace;
+  box-shadow: 0 0 10px red;
+}
+
+.next-button:hover {
+  background-color: darkred;
+}
+
   </style>
   <script>
     window.onload = function() {
@@ -45,6 +63,15 @@
       }, 1000);
     };
   </script>
+
+  <script>
+  function trackAndGo() {
+    fetch('https://api.countapi.xyz/hit/lektio-hack-demo/oplysning')
+      .then(() => {
+        window.location.href = 'opklaring.html';
+      });
+  }
+</script>
 </head>
 <body>
   <div class="warning-box">
@@ -53,10 +80,11 @@
     <p>Systemet er kompromitteret...</p>
     <p><strong>Du er blevet hacket!</strong></p>
 
-   <!--    <!-- Knappen -->
-    <button class="next-button" onclick="window.location.href='opklaring.html'">
-      Gå til opklaring
-    </button> --!>
+   <!-- Knappen -->
+<button class="next-button" onclick="trackAndGo()">
+  Gå til opklaring
+</button>
+    
   </div>
 </body>
 </html>
